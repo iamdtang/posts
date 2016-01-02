@@ -8,11 +8,9 @@ Testing in JavaScript is becoming expected by developers more and more. But wher
 The APIs of Jasmine and Mocha are very similar. They both allow you to write your tests in the behaviour driven development (BDD) style. You might ask, "What is BDD?". In short, BDD is simply a style of writing tests that focusses on the language used.
 
 ```js
-describe('calculator', function() {
-  describe('add()', function() {
-    it('should add 2 numbers togoether', function() {
-      // assertions here
-    });
+describe('calculator add()', function() {
+  it('should add 2 numbers togoether', function() {
+    // assertions here
   });
 });
 ```
@@ -31,7 +29,7 @@ __Chai__
 expect(calculator.add(1, 4)).to.equal(5);
 ```
 
-Pretty similar right? If you are switching from Jasmine to Mocha, the path with the easiest learning curve is to use Chai with the `expect` style.
+Pretty similar right? If you are switching from Jasmine to Mocha, the path with the easiest learning curve is to use Chai with the `expect` style. In Jasmine, the assertion methods like `toEqual()` use camel case whereas the compliment in Chai uses dot notation, `to.equal()`.
 
 ## 2. Test Doubles
 
