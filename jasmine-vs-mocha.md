@@ -1,12 +1,11 @@
-I first got into JavaScript testing with the Jasmine framework. At the time of this writing, Jasmine is still probably the 
-most popular unit testing framework for JavaScript. Jasmine has almost everything I need to write unit tests. It has a very 
-readable API and a simple mocking library (spies) already built in. Recently, I started a couple open source projects and 
-I decided to try Mocha (with Chai and Sinon - more on this later), another popular JavaScript testing framework. This post 
-is a quick overview of the differences between Jasmine 2.x and Mocha using Chai and Sinon.
+Jasmine vs Mocha
+================
 
-## 1. Jasmine vs Mocha Syntax
+Testing in JavaScript is becoming expected by developers more and more. But where do you start? There are so many framework choices out there; it can be overwhelming. This post is a quick overview of the differences between two popular JavaScript testing frameworks: Jasmine (version 2) and Mocha. We'll also discuss companion libaries also commonly used: Chai and Sinon.
 
-The APIs of these two frameworks are very similar. They both allow you to write your tests in the `describe` block format.
+## 1. API
+
+The APIs of Jasmine and Mocha are very similar. They both allow you to write your tests in the BDD style language using `describe` blocks.
 
 ```js
 describe('calculator', function() {
@@ -18,7 +17,7 @@ describe('calculator', function() {
 });
 ```
 
-The assertions or expectations are where things start to differ. Mocha does not have a built in assertion library. There are several options though for both Node and the browser: Chai, should.js, expect.js, and better-assert. A lot of developers choose Chai as their assertion library. Because none of these assertion libraries come with Mocha, this is another thing you will need to load into your setup. Chai comes with 3 different assertion flavors. It has the `should` style, the `expect` style, and the `assert` style. The `expect` style is similar to Jasmine.
+The assertions, or expectations as they are often called, are where things start to differ. Mocha does not have a built in assertion library. There are several options though for both Node and the browser: Chai, should.js, expect.js, and better-assert. A lot of developers choose Chai as their assertion library. Because none of these assertion libraries come with Mocha, this is another thing you will need to load into your setup. Chai comes with 3 different assertion flavors. It has the `should` style, the `expect` style, and the `assert` style. The `expect` style is similar to Jasmine.
 
 __Jasmine__
 
@@ -168,4 +167,6 @@ This is really handy if you want to test your code that makes AJAX calls and som
 
 In conclusion, the Jasmine framework has everything built into it including assertions and mocking utilities (which are called spies). Mocha is just a test runner and does not include assertion and mocking utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular choice. Mocking in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness if you are using Jasmine for its fake server implementation.
 
-Trying to figure out testing libraries/frameworks to use for JavaScript can be tough but hopefully this article has made it more clear as to what some of the main differences are between Jasmine and Mocha. You can't really go wrong with either choice. Happy testing!
+Trying to figure out testing libraries/frameworks to use for JavaScript can be tough but hopefully this article has made it more 
+clear as to what some of the main differences are between Jasmine and Mocha. You can't really go wrong with either choice. 
+Happy testing!
