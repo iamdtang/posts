@@ -3,7 +3,7 @@ Jasmine vs Mocha
 
 Testing in JavaScript is becoming expected by developers more and more. But where do you start? There are so many framework choices out there. It can feel pretty overwhelming. This post is a quick overview of the differences between two popular JavaScript testing frameworks: [Jasmine 2](http://jasmine.github.io/) and [Mocha](https://mochajs.org/). We will also discuss commonly used libraries, [Chai](http://chaijs.com/) and [Sinon](http://sinonjs.org/), that are often used in conjunction with Jasmine and Mocha.
 
-## 1. API
+## 1. The API
 
 The APIs of Jasmine and Mocha are very similar. They both allow you to write your tests in the behaviour driven development (BDD) style. You might ask, "What is BDD?". In short, BDD is simply a style of writing tests that focusses on the language used.
 
@@ -55,7 +55,7 @@ You can also create a spy if you do not have an existing method you want to spy 
 var spy = jasmine.createSpy();
 ```
 
-In contrast, Mocha does not come with test double library. Instead, you will need to load in Sinon into your test harness. Sinon is a very powerful test double library and is the equivalent of Jasmine spies with a little more. One thing to note is that Sinon breaks up test doubles into three different categories: [spies](http://sinonjs.org/docs/#spies), [stubs](http://sinonjs.org/docs/#stubs), and [mocks](http://sinonjs.org/docs/#mocks), each with subtle differences.
+In contrast, Mocha does not come with a test double library. Instead, you will need to load in Sinon into your test harness. Sinon is a very powerful test double library and is the equivalent of Jasmine spies with a little more. One thing to note is that Sinon breaks up test doubles into three different categories: [spies](http://sinonjs.org/docs/#spies), [stubs](http://sinonjs.org/docs/#stubs), and [mocks](http://sinonjs.org/docs/#mocks), each with subtle differences.
 
 A spy in Sinon calls through to the method being spied on whereas you have to specify this behavior in Jasmine. For example:
 
@@ -75,7 +75,9 @@ sinon.stub(user, 'isValid').returns(true) // Sinon
 spyOn(user, 'isValid').andReturns(true) // Jasmine
 ```
 
-In your code, if `user.isValid` is called during the execution of your tests, the original `user.isValid` would not be called and a fake version of it (the test double) that returns `true` would be used.
+In your code, if `user.isValid` is called during the execution of your tests, the original `user.isValid` would not be called and a fake version of it (the test double) that returns `true` would be used. In Sinon, a stub is a test double built on top of spies, so stubs have the ability to record how the function is being used. 
+
+So to summarize, a spy is a type of test double that records how a function is used. A stub is a type of test double that acts as a controllable replace as well as having the capabilities of a spy.
 
 From my experience, Jasmine spies cover almost everything I need for test doubles so in many situations you won't need to use Sinon if you are using Jasmine, but you can use the two together if you would like. One reason I do use Sinon with Jasmine is for its fake server (more on this later).
 
@@ -172,5 +174,4 @@ In the above example, if a `GET` request is made to `/users`, a 200 response con
 In conclusion, the Jasmine framework has almost everything built into it including assertions/expectations and test double utilities (which come in the form of spies). On the other hand, Mocha is just a test runner and does not include assertion and test double utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular. Test doubles in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness for its fake server implementation.
 
 Trying to figure out testing libraries/frameworks to use for JavaScript can be tough but hopefully this article has made it more 
-clear as to what some of the main differences are between Jasmine and Mocha. You can't really go wrong with either choice. 
-Happy testing!
+clear as to what some of the main differences are between Jasmine and Mocha. You can't really go wrong with either choice. The important thing is that you are testing!
