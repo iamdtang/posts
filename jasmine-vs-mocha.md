@@ -29,7 +29,7 @@ __Chai__
 expect(calculator.add(1, 4)).to.equal(5);
 ```
 
-Pretty similar right? If you are switching from Jasmine to Mocha, the path with the easiest learning curve is to use Chai with the `expect` style. In Jasmine, the assertion methods like `toEqual()` use camel case whereas the compliment in Chai uses dot notation, `to.equal()`.
+Pretty similar right? If you are switching from Jasmine to Mocha, the path with the easiest learning curve is to use Chai with the `expect` style. In Jasmine, the assertion methods like `toEqual()` use camel case whereas the compliment in Chai uses dot notation, `to.equal()`. Both Jasmine and Mocha use `describe()` and `it()` functions.
 
 ## 2. Test Doubles
 
@@ -80,7 +80,7 @@ So to summarize, a spy is a type of test double that records how a function is u
 From my experience, Jasmine spies cover almost everything I need for test doubles so in many situations you won't need to use Sinon if you are using Jasmine, but you can use the two together if you would like. One reason I do use Sinon with Jasmine is for its fake server (more on this later).
 
 
-## 3. Asynchronous Tests
+## 3. Asynchronous Testing
 
 Asynchronous testing in Jasmine 2.x and Mocha is the same.
 
@@ -167,7 +167,7 @@ it('should return a collection object containing all users', function(done) {
 
 In the above example, if a `GET` request is made to `/users`, a 200 response containing two users, Gwen and John, will be returned. This can be really handy for a few reasons. First, it allows you to test your code that makes AJAX calls regardless of which AJAX library you are using. Second, you may want to test a function that makes an AJAX call and does some preprocessing on the response before the promise resolves. Third, maybe there are several responses that can be returned based on if the request succeeds or fails such as a successful credit card charge, an invalid credit card number, an expired card, an invalid CVC, etc. You get the idea. If you have worked with Angular, Sinon's fake server is similar to the _$httpBackend_ service provided in angular mocks.
 
-## Conclusion
+## Summary
 
 In conclusion, the Jasmine framework has almost everything built into it including assertions/expectations and test double utilities (which come in the form of spies). On the other hand, Mocha is just a test runner and does not include assertion and test double utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular. Test doubles in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness for its fake server implementation.
 
