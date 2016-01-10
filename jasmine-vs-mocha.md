@@ -181,7 +181,20 @@ Jasmine however does not have a command line utility to run tests. There are tes
 
 ## Summary
 
-In conclusion, the Jasmine framework has almost everything built into it including assertions/expectations and test double utilities (which come in the form of spies). On the other hand, Mocha is just a test runner and does not include assertion and test double utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular. Test doubles in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness for its fake server implementation.
+In conclusion, the Jasmine framework has almost everything built into it including assertions/expectations and test double utilities (which come in the form of spies). However, it does not have a test runner so you will need to use a tool like Karma for that. Mocha on the other hand includes a test runner and an API for setting up your test suite but does not include assertion and test double utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular. Test doubles in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness for its fake server implementation.
+
+So, if you were to choose a test framework setup today, what would it look like?
+
+If you go with Jasmine, you will likely use:
+
+* Karma (for the test runner)
+* Sinon (possibly for its fake server unless your framework provides an equivalent, like `$httpBackend` if you are using Angular)
+
+If you go with Mocha, you will likely use:
+
+* Chai (for assertions)
+* Sinon (for test doubles and its fake server)
+* Karma or `mocha` CLI (for the test runner)
 
 Trying to figure out testing libraries/frameworks to use for JavaScript can be tough but hopefully this article has made it more 
 clear as to what some of the main differences are between Jasmine and Mocha. You can't really go wrong with either choice. The important thing is that you are testing!
