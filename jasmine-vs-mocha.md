@@ -177,7 +177,7 @@ mocha tests --recursive --watch
 
 This assumes your tests are located in a directory called `tests`. The recursive flag will find all files in subdirectories, and the watch flag will watch all your source and test files and rerun the tests when they change.
 
-Jasmine however does not have a command line utility to run tests. There are test runners out there for Jasmine, and a very popular one is [Karma](http://karma-runner.github.io/) by the Angular team. Karma also allows supports Mocha if you'd like to run your Mocha tests through Karma.
+Jasmine however does not have a command line utility to run tests. There are test runners out there for Jasmine, and a very popular one is [Karma](http://karma-runner.github.io/) by the Angular team. Karma also allows support for Mocha if you'd like to run your Mocha tests that way.
 
 ## Summary
 
