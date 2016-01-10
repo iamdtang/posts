@@ -183,7 +183,7 @@ Jasmine however does not have a command line utility to run tests. There are tes
 
 In conclusion, the Jasmine framework has almost everything built into it including assertions/expectations and test double utilities (which come in the form of spies). However, it does not have a test runner so you will need to use a tool like Karma for that. Mocha on the other hand includes a test runner and an API for setting up your test suite but does not include assertion and test double utilities. There are several choices for assertions when using Mocha, and Chai tends to be the most popular. Test doubles in Mocha also requires another library, and Sinon.js is often the de-facto choice. Sinon can also be a great addition to your test harness for its fake server implementation.
 
-So, if you were to choose a test framework setup today, what would it look like?
+So, if you were to choose a test framework setup today, what might it look like?
 
 If you go with Jasmine, you will likely use:
 
