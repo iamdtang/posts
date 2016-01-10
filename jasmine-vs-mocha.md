@@ -5,7 +5,7 @@ Testing in JavaScript is becoming expected by developers more and more. But wher
 
 ## 1. The API
 
-The APIs of Jasmine and Mocha are very similar. They both allow you to write your tests in the behaviour driven development (BDD) style. You might ask, "What is BDD?". In short, BDD is simply a style of writing tests that focusses on the language used.
+The APIs of Jasmine and Mocha are very similar where you write your test suite with `describe` blocks and each test, also called a spec, using the `it` function.
 
 ```js
 describe('calculator add()', function() {
@@ -166,6 +166,18 @@ it('should return a collection object containing all users', function(done) {
 ```
 
 In the above example, if a `GET` request is made to `/users`, a 200 response containing two users, Gwen and John, will be returned. This can be really handy for a few reasons. First, it allows you to test your code that makes AJAX calls regardless of which AJAX library you are using. Second, you may want to test a function that makes an AJAX call and does some preprocessing on the response before the promise resolves. Third, maybe there are several responses that can be returned based on if the request succeeds or fails such as a successful credit card charge, an invalid credit card number, an expired card, an invalid CVC, etc. You get the idea. If you have worked with Angular, Sinon's fake server is similar to the _$httpBackend_ service provided in angular mocks.
+
+## 5. Running Tests
+
+Mocha comes with a command line utility that you can use to run tests. For example:
+
+```bash
+mocha tests --recursive --watch
+```
+
+This assumes your tests are located in a directory called `tests`. The recursive flag will find all files in subdirectories, and the watch flag will watch all your source and test files and rerun the tests when they change.
+
+Jasmine however does not have a command line utility to run tests. There are test runners out there for Jasmine, and a very popular one is [Karma](http://karma-runner.github.io/) by the Angular team. Karma also allows supports Mocha if you'd like to run your Mocha tests through Karma.
 
 ## Summary
 
